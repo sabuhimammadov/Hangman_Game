@@ -77,11 +77,14 @@ chosenWord = "";
        this.userInputSection.innerHTML =displayItem;
     };
     
+    newGamebtnFunc(){
+        this.newGameBtn.addEventListener("click",this.initializer())
+    }
      initializer(){
         this.winCount =0;
         this.count =0;
         // initially erase all content and hide letters and new game button 
-        this.userInputSection.innerHTML = "";
+        this.userInputSection.innerHTML ="";
         this.optionsContainer.innerHTML = "";
         this.letterContainer.classList.add("hide");
          this.newGameContainer.classList.add("hide");
@@ -145,5 +148,5 @@ chosenWord = "";
 }
 
 var game1 =new Hangman("Sabuhi")
-game1.newGameBtn.addEventListener("click",game1.initializer())
+game1.newGamebtnFunc()
 window.onload =game1.initializer()
